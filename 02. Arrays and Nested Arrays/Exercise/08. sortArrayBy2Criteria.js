@@ -7,5 +7,12 @@ function sortArrayBy2Criteria(arr) {
     }
   });
   console.log(sortArr.join("\n"));
+
+  // Functional solution
+  // return arr
+  //   .sort((a, b) => {
+  //     return a.length - b.length || a.localeCompare(b);
+  //   })
+  //   .join("\n");
 }
 sortArrayBy2Criteria(["Isacc", "Theodor", "Jack", "Harrison", "George"]);
