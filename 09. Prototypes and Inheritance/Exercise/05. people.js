@@ -5,6 +5,7 @@ function people() {
       this.age = age;
       this.salary = 0;
       this.tasks = [];
+      this.dividend = 0;
     }
 
     work() {
@@ -13,10 +14,7 @@ function people() {
     }
 
     collectSalary() {
-      let currentSalary = this.dividend
-        ? this.salary + this.dividend
-        : this.salary;
-      console.log(`${this.name} received ${currentSalary} this month.`);
+      console.log(`${this.name} received ${this.salary} this month.`);
     }
   }
 
@@ -50,8 +48,13 @@ function people() {
         `${this.name} scheduled a meeting.`,
         `${this.name} is preparing a quarterly report.`,
       ];
-      this.dividend = 0;
       super.tasks = tasksList;
+      this.dividend = 0;
+    }
+    collectSalary() {
+      console.log(
+        `${this.name} received ${this.salary + this.dividend} this month.`
+      );
     }
   }
 
